@@ -4,6 +4,8 @@
 # pptxtemplates
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/EmilHvitfeldt/pptxtemplates/workflows/R-CMD-check/badge.svg)](https://github.com/EmilHvitfeldt/pptxtemplates/actions)
 <!-- badges: end -->
 
 The goal of pptxtemplates is to provide rmarkdown templates for

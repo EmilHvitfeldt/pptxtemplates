@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # pptxtemplates
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/EmilHvitfeldt/pptxtemplates/workflows/R-CMD-check/badge.svg)](https://github.com/EmilHvitfeldt/pptxtemplates/actions)
 <!-- badges: end -->
 
 The goal of pptxtemplates is to provide rmarkdown templates for powerpoint presentatations that include reference document for styling.
