@@ -13,3 +13,5 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1.9001
+URL: https://github.com/EmilHvitfeldt/pptxtemplates
+BugReports: https://github.com/EmilHvitfeldt/pptxtemplates/issues
