@@ -1,0 +1,126 @@
+---
+title: "Edit: This is the title"
+subtitle: "Edit: This is a subtitle"
+output: 
+  powerpoint_presentation:
+    reference_doc: "reference_doc.pptx"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = FALSE)
+
+library(pptxtemplates)
+
+content_dimensions <- pptx_content_dimensions("reference_doc.pptx")
+
+opts_template$set(
+  full = content_dimensions$full,
+  left = content_dimensions$left,
+  right = content_dimensions$right
+)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+::: notes
+This is a speaker note.
+
+- Use basic Markdown
+- like this list
+- *and inline formatting*
+:::
+
+## Slide with tables
+
+```{r}
+knitr::kable(mtcars[1:8, 1:5])
+```
+
+## Slide with R Output
+
+```{r cars, echo=TRUE}
+summary(cars)
+```
+
+## Full Sized Chart
+
+```{r, opts.label = "full"}
+library(ggplot2)
+
+ggplot(faithfuld, aes(waiting, eruptions)) +
+ geom_raster(aes(fill = density)) +
+  scale_fill_viridis_c(option = "B") +
+  theme_minimal()
+```
+
+# Two column layouts
+
+## And we have columns
+
+:::::: {.columns}
+::: {.column}
+
+Section headers slides are created using level 1 headers with #
+
+:::
+
+::: {.column}
+
+Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet consectetur. Ullamcorper sit amet risus nullam. Nam libero justo laoreet sit amet cursus sit. Justo nec ultrices dui sapien. Sed viverra tellus in hac habitasse platea dictumst vestibulum.
+
+:::
+::::::
+
+## full sized charts using columns
+
+:::::: {.columns}
+::: {.column}
+
+Donec massa sapien faucibus et. Leo vel orci porta non pulvinar neque laoreet suspendisse.
+
+:::
+
+::: {.column}
+
+```{r, opts.label = "right"}
+library(ggplot2)
+
+ggplot(faithfuld, aes(waiting, eruptions)) +
+ geom_raster(aes(fill = density)) +
+  scale_fill_viridis_c(option = "B") +
+  theme_minimal()
+```
+
+:::
+::::::
+
+## full sized charts using columns
+
+:::::: {.columns}
+::: {.column}
+
+```{r, opts.label = "left"}
+ggplot(faithfuld, aes(waiting, eruptions)) +
+ geom_raster(aes(fill = density)) +
+  scale_fill_viridis_c(option = "C") +
+  theme_minimal()
+```
+
+:::
+
+::: {.column}
+
+```{r, opts.label = "right"}
+ggplot(faithfuld, aes(waiting, eruptions)) +
+ geom_raster(aes(fill = density)) +
+  scale_fill_viridis_c(option = "D") +
+  theme_minimal()
+```
+
+:::
+::::::
